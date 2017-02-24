@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box {
+        height: 375px;
+        width: 501px;
+        margin: auto;
+        background-size: cover;
+        position: relative;
+    }
+
+    .img {
+        position: absolute;
+    }
+
+
+    .box:hover .img {
+        -webkit-filter: blur(10px); /* Chrome, Opera */
+        -moz-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+    }
+
+    .part1 {
+        height: 300px;
+        width: 0px;
+        border-top: 4px solid #ffffff;
+        border-bottom: 4px solid #ffffff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: width 1s ease;
+
+    }
+
+    .part2 {
+        height: 0px;
+        width: 460px;
+        border-right: 4px solid #ffffff;
+        border-left: 4px solid #ffffff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transition: height 1s ease;
+
+    }
+
+    .box:hover .part1 {
+        transition: width 1s ease;
+        width: 468px;
+    }
+
+    .box:hover .part2 {
+        transition: height 1s ease;
+        height: 300px;
+    }
+    .box:hover .text {
+        display: block;
+    }
+    .text {
+        display: none;
+        height: 50px;
+        width: 300px;
+        font-size: 30px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: -webkit-linear-gradient(left, pink, red 25%, yellow 50%, blue 75%, pink 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 500% 100%;
+        animation: streamer 10s infinite linear;
+    }
+
+    @keyframes streamer {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -300% 0;
+        }
+    }
+
+</style>
+<body>
+<div class="box">
+    <img class="img" src="bg.jpeg" alt="" height="375" width="501">
+    <div class="part1"></div>
+    <div class="part2"></div>
+    <p class="text">welcome to wesafari</p>
+</div>
+</body>
+</html>
